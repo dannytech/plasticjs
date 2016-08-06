@@ -1,22 +1,48 @@
+# PlasticJS
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+[![Build Status](https://travis-ci.org/dannytech/plasticjs.svg?branch=master)](https://travis-ci.org/dannytech/plasticjs)
 
+PlasticJS is an [Express](http://expressjs.com)-compatible all-in-one payment library for NodeJS web applications.
+It supports integration with many existing payment services, including Stripe, PayPal, BrainTree, and more to come
 
-Welcome to your Node.js project on Cloud9 IDE!
+## Install
+```
+$ npm install plasticjs
+```
 
-This chat example showcases how to use `socket.io` with a static `express` server.
+## Usage
 
-## Running the server
+#### Configuring Providers
 
-1) Open `server.js` and start the app by clicking on the "Run" button in the top menu.
+By default, PlasticJS does not come with any payment providers in it's package. It is designed to allow other modules,
+providers, plug into it so you can customize how your users support you. To add a provider is simple: ```npm install``` it,
+then require it into Plastic:
 
-2) Alternatively you can launch the app from the Terminal:
+```javascript
+var stripe = require("plasticjs-stripe").Provider;
+plastic.use("stripe", stripe({
+    
+}));
+```
 
-    $ node server.js
+#### Express middleware
 
-Once the server is running, open the project in the shape of 'https://projectname-username.c9.io/'. As you enter your name, watch the Users list (on the left) update. Once you press Enter or Send, the message is shared with all connected clients.
+PlasticJS provides easy integration into [Express](http://expressjs.com) using middleware:
+
+When you want to add a payment page:
+
+```javascript
+// Opens the payment page for the provider
+app.get("/stripe", plastic.pay("stripe"));
+
+// Pays after form submission
+app.post("/stripe", plastic.pay("stripe"));
+```
+
+## Providers
+
+|Provider
+|--------
+|[Stripe](https://github.com/dannytech/plasticjs-stripe)
+|[Paypal]()
+|[BrainTree]()

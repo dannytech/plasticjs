@@ -5,7 +5,14 @@
   "main": "index.js",
   "repository": "",
   "author": "dannytech <dhellstern@outlook.com>",
+  "scripts": {
+    "test": "nsp check && retire"
+  },
   "dependencies": {
     "async": "~0.2.8"
+  },
+  "devDependencies": {
+    "nsp": "^2.6.1",
+    "retire": "^1.1.5"
   }
 }
