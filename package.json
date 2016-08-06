@@ -1,13 +1,11 @@
 {
-  "name": "chat-example",
+  "name": "plasticjs",
   "version": "0.0.0",
-  "description": "A chat example to showcase how to use `socket.io` with a static `express` server with `async` for control flow.",
-  "main": "server.js",
+  "description": "All-in-one payment library for NodeJS",
+  "main": "index.js",
   "repository": "",
-  "author": "Mostafa Eweda <mo.eweda@gmail.com>",
+  "author": "dannytech <dhellstern@outlook.com>",
   "dependencies": {
-    "async": "~0.2.8",
-    "express": "~3.2.4",
-    "socket.io": "~0.9.14"
+    "async": "~0.2.8"
   }
 }
