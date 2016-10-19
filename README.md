@@ -14,7 +14,7 @@ $ npm install plasticjs
 
 #### Configuring Providers
 
-By default, PlasticJS does not come with any payment providers in it's package. It is designed to allow other modules,
+By default, PlasticJS does not come with any payment providers in its package. It is designed to allow other modules,
 providers, plug into it so you can customize how your users support you. To add a provider is simple: ```npm install``` it,
 then require it into Plastic:
 
