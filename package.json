@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "nsp": "^2.6.1",
-    "retire": "^1.1.5"
+    "retire": "^1.1.5",
+    "standard": "^8.6.0"
   }
 }
